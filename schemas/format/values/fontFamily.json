@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/fontFamily",
+    "title": "Font Family Value",
+    "description": "Value schema for fontFamily type tokens. Represents a font name or an array of font names (ordered from most to least preferred).",
+    "oneOf": [
+        {
+            "type": "string",
+            "description": "A single font name"
+        },
+        {
+            "type": "array",
+            "description": "An array of font names, ordered from most to least preferred",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    ]
+}

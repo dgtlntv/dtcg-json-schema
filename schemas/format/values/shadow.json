@@ -1,0 +1,102 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/shadow",
+    "title": "Shadow Value",
+    "description": "Value schema for shadow type tokens. Represents a shadow style.",
+    "oneOf": [
+        {
+            "$ref": "#/$defs/shadowObject"
+        },
+        {
+            "type": "array",
+            "description": "Array of shadow objects and/or references to shadow tokens",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/$defs/shadowObject"
+                    },
+                    {
+                        "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    }
+                ]
+            },
+            "minItems": 1
+        }
+    ],
+    "$defs": {
+        "shadowObject": {
+            "title": "Shadow Object",
+            "type": "object",
+            "properties": {
+                "color": {
+                    "description": "The color of the shadow",
+                    "oneOf": [
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format/values/color"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        }
+                    ]
+                },
+                "offsetX": {
+                    "description": "The horizontal offset that shadow has from the element it is applied to",
+                    "oneOf": [
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        }
+                    ]
+                },
+                "offsetY": {
+                    "description": "The vertical offset that shadow has from the element it is applied to",
+                    "oneOf": [
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        }
+                    ]
+                },
+                "blur": {
+                    "description": "The blur radius that is applied to the shadow",
+                    "oneOf": [
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        }
+                    ]
+                },
+                "spread": {
+                    "description": "The amount by which to expand or contract the shadow",
+                    "oneOf": [
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        }
+                    ]
+                },
+                "inset": {
+                    "description": "Whether this shadow is inside the containing shape (inner shadow) rather than a drop shadow (default: false)",
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                        }
+                    ]
+                }
+            },
+            "required": ["color", "offsetX", "offsetY", "blur", "spread"],
+            "additionalProperties": false
+        }
+    }
+}

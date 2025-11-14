@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/border",
+    "title": "Border Value",
+    "description": "Value schema for border type tokens. Represents a border style.",
+    "type": "object",
+    "properties": {
+        "color": {
+            "description": "The color of the border",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/color"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "width": {
+            "description": "The width or thickness of the border",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "style": {
+            "description": "The border's style",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/strokeStyle"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        }
+    },
+    "required": ["color", "width", "style"],
+    "additionalProperties": false
+}

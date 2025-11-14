@@ -1,0 +1,55 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/cubicBezier",
+    "title": "Cubic Bézier Value",
+    "description": "Value schema for cubicBezier type tokens. Represents how the value of an animated property progresses towards completion over the duration of an animation, effectively creating visual effects such as acceleration, deceleration, and bounce.",
+    "type": "array",
+    "prefixItems": [
+        {
+            "$ref": "#/$defs/xCoordinate",
+            "description": "P1x - X coordinate of first control point"
+        },
+        {
+            "$ref": "#/$defs/yCoordinate",
+            "description": "P1y - Y coordinate of first control point"
+        },
+        {
+            "$ref": "#/$defs/xCoordinate",
+            "description": "P2x - X coordinate of second control point"
+        },
+        {
+            "$ref": "#/$defs/yCoordinate",
+            "description": "P2y - Y coordinate of second control point"
+        }
+    ],
+    "minItems": 4,
+    "maxItems": 4,
+    "$defs": {
+        "xCoordinate": {
+            "title": "X Coordinate",
+            "description": "X coordinate of control point (must be between 0 and 1)",
+            "oneOf": [
+                {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "yCoordinate": {
+            "title": "Y Coordinate",
+            "description": "Y coordinate of control point (can be any real number)",
+            "oneOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        }
+    }
+}

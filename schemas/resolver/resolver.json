@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/resolver",
+    "title": "DTCG Resolver Schema",
+    "description": "JSON Schema for the Design Tokens Community Group (DTCG) Resolver specification",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "A short, human-readable name for the document"
+        },
+        "version": {
+            "type": "string",
+            "const": "2025-11-01",
+            "description": "Resolver specification version. Must be 2025-11-01."
+        },
+        "description": {
+            "type": "string",
+            "description": "A human-readable description for this document"
+        },
+        "sets": {
+            "type": "object",
+            "patternProperties": {
+                "^.*$": {
+                    "$ref": "https://designtokens.org/schema/2025.10/resolver/set"
+                }
+            },
+            "description": "Named collections of design tokens"
+        },
+        "modifiers": {
+            "type": "object",
+            "patternProperties": {
+                "^.*$": {
+                    "$ref": "https://designtokens.org/schema/2025.10/resolver/modifier"
+                }
+            },
+            "description": "Named conditional token collections"
+        },
+        "resolutionOrder": {
+            "type": "array",
+            "items": {
+                "$ref": "https://designtokens.org/schema/2025.10/resolver/resolutionOrder"
+            },
+            "minItems": 1,
+            "description": "Ordered array of sets and modifiers for resolution"
+        },
+        "$defs": {
+            "type": "object",
+            "description": "Optional definitions that may be referenced within the document"
+        }
+    },
+    "required": ["version", "resolutionOrder"],
+    "additionalProperties": false
+}

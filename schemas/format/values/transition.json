@@ -1,0 +1,44 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/transition",
+    "title": "Transition Value",
+    "description": "Value schema for transition type tokens. Represents an animated transition between two states.",
+    "type": "object",
+    "properties": {
+        "duration": {
+            "description": "The duration of the transition",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/duration"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "delay": {
+            "description": "The time to wait before the transition begins",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/duration"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "timingFunction": {
+            "description": "The timing function of the transition",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/cubicBezier"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        }
+    },
+    "required": ["duration", "delay", "timingFunction"],
+    "additionalProperties": false
+}

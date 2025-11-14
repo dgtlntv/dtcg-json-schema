@@ -1,0 +1,7 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/number",
+    "title": "Number Value",
+    "description": "Value schema for number type tokens. Numbers can be positive, negative and have fractions. Example uses are gradient stop positions or unitless line heights.",
+    "type": "number"
+}

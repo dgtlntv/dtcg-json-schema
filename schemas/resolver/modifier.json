@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/resolver/modifier",
+    "title": "Modifier",
+    "description": "A modifier allows for conditional inclusion of tokens via the contexts map. Similar to a set, but with multiple contexts representing different variations (e.g., light/dark themes, small/medium/large sizes).",
+    "type": "object",
+    "properties": {
+        "description": {
+            "type": "string",
+            "description": "A human-readable description of the modifier"
+        },
+        "contexts": {
+            "type": "object",
+            "patternProperties": {
+                "^.*$": {
+                    "$ref": "https://designtokens.org/schema/2025.10/resolver/context"
+                }
+            },
+            "minProperties": 1,
+            "description": "Map of context names to token sources. Each key represents a possible context value, and the value is an array of token sources to apply when that context is selected."
+        },
+        "default": {
+            "type": "string",
+            "description": "Default context value. Must match one of the keys in contexts. Used when no input is provided for this modifier."
+        },
+        "$extensions": {
+            "type": "object",
+            "description": "Vendor-specific extensions with keys being vendor-specific namespaces"
+        }
+    },
+    "required": ["contexts"],
+    "additionalProperties": false
+}

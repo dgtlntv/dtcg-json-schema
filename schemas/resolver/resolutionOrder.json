@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/resolver/resolutionOrder",
+    "title": "Resolution Order Item",
+    "description": "An item in the resolutionOrder array. Can be a reference to a named set or modifier, or an inline set or modifier definition with required type and name properties.",
+    "oneOf": [
+        {
+            "$ref": "https://designtokens.org/schema/2025.10/resolver/referenceObject",
+            "description": "Reference to a named set (#/sets/...) or modifier (#/modifiers/...)"
+        },
+        {
+            "allOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/resolver/set"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "set",
+                            "description": "Must be 'set' for inline set definitions"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Unique name that must not conflict with any other name in resolutionOrder"
+                        }
+                    },
+                    "required": ["type", "name"]
+                }
+            ],
+            "description": "Inline set definition with type and name"
+        },
+        {
+            "allOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/resolver/modifier"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "const": "modifier",
+                            "description": "Must be 'modifier' for inline modifier definitions"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "Unique name that must not conflict with any other name in resolutionOrder"
+                        }
+                    },
+                    "required": ["type", "name"]
+                }
+            ],
+            "description": "Inline modifier definition with type and name"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/format/values/typography",
+    "title": "Typography Value",
+    "description": "Value schema for typography type tokens. Represents a typographic style.",
+    "type": "object",
+    "properties": {
+        "fontFamily": {
+            "description": "The typography's font",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/fontFamily"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "fontSize": {
+            "description": "The size of the typography",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "fontWeight": {
+            "description": "The weight of the typography",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/fontWeight"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "letterSpacing": {
+            "description": "The horizontal spacing between characters",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        },
+        "lineHeight": {
+            "description": "The vertical spacing between lines of typography (interpreted as a multiplier of fontSize)",
+            "oneOf": [
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format/values/number"
+                },
+                {
+                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                }
+            ]
+        }
+    },
+    "required": ["fontFamily", "fontSize", "fontWeight", "letterSpacing", "lineHeight"],
+    "additionalProperties": false
+}

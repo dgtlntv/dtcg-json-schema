@@ -1,0 +1,14 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://designtokens.org/schema/2025.10/resolver/input",
+    "title": "Resolver Input",
+    "description": "Input object for resolver execution. Provides the context selections for modifiers. All keys must correspond to modifier names, and all values must be valid context names for those modifiers. Values must be strings.",
+    "type": "object",
+    "patternProperties": {
+        "^.*$": {
+            "type": "string",
+            "description": "Modifier name to context value mapping. The key is the modifier name, the value is the selected context."
+        }
+    },
+    "additionalProperties": false
+}
