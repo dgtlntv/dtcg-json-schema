@@ -1,58 +1,100 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://designtokens.org/schema/2025.10/resolver/resolutionOrder",
-    "title": "Resolution Order Item",
-    "description": "An item in the resolutionOrder array. Can be a reference to a named set or modifier, or an inline set or modifier definition with required type and name properties.",
-    "oneOf": [
-        {
-            "$ref": "https://designtokens.org/schema/2025.10/resolver/referenceObject",
-            "description": "Reference to a named set (#/sets/...) or modifier (#/modifiers/...)"
+    "title": "Resolution Order",
+    "description": "An ordered array of sets and modifiers that determines the final resolution of tokens. Order is significant - tokens later in the array override earlier ones in case of conflict.",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "oneOf": [
+            {
+                "$ref": "#/$defs/referenceObjectForResolutionOrder",
+                "description": "A reference to a set or modifier defined in the sets or modifiers sections"
+            },
+            {
+                "$ref": "#/$defs/inlineSet",
+                "description": "An inline set definition"
+            },
+            {
+                "$ref": "#/$defs/inlineModifier",
+                "description": "An inline modifier definition"
+            }
+        ]
+    },
+    "$defs": {
+        "referenceObjectForResolutionOrder": {
+            "title": "Reference Object (For Resolution Order)",
+            "type": "object",
+            "required": ["$ref"],
+            "properties": {
+                "$ref": {
+                    "title": "JSON Reference",
+                    "type": "string",
+                    "format": "uri-reference",
+                    "description": "A JSON Pointer (RFC 6901) or URI reference. Must point to a set (#/sets/...) or modifier (#/modifiers/...), never to resolutionOrder items (#/resolutionOrder/...).",
+                    "not": {
+                        "pattern": "^#/resolutionOrder/",
+                        "$comment": "ResolutionOrder cannot reference items within itself"
+                    }
+                }
+            },
+            "description": "A reference object for use within resolutionOrder. Can point to sets or modifiers but not other resolutionOrder items."
         },
-        {
+        "inlineSet": {
+            "title": "Inline Set",
+            "description": "A set defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
             "allOf": [
                 {
                     "$ref": "https://designtokens.org/schema/2025.10/resolver/set"
                 },
                 {
                     "type": "object",
+                    "required": ["name", "type"],
                     "properties": {
+                        "name": {
+                            "title": "Name",
+                            "type": "string",
+                            "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
+                            "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
+                        },
                         "type": {
+                            "title": "Type",
                             "type": "string",
                             "const": "set",
-                            "description": "Must be 'set' for inline set definitions"
-                        },
-                        "name": {
-                            "type": "string",
-                            "description": "Unique name that must not conflict with any other name in resolutionOrder"
+                            "description": "MUST be 'set' for inline set definitions."
                         }
-                    },
-                    "required": ["type", "name"]
+                    }
                 }
             ],
-            "description": "Inline set definition with type and name"
+            "unevaluatedProperties": false
         },
-        {
+        "inlineModifier": {
+            "title": "Inline Modifier",
+            "description": "A modifier defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
             "allOf": [
                 {
                     "$ref": "https://designtokens.org/schema/2025.10/resolver/modifier"
                 },
                 {
                     "type": "object",
+                    "required": ["name", "type"],
                     "properties": {
+                        "name": {
+                            "title": "Name",
+                            "type": "string",
+                            "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
+                            "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
+                        },
                         "type": {
+                            "title": "Type",
                             "type": "string",
                             "const": "modifier",
-                            "description": "Must be 'modifier' for inline modifier definitions"
-                        },
-                        "name": {
-                            "type": "string",
-                            "description": "Unique name that must not conflict with any other name in resolutionOrder"
+                            "description": "MUST be 'modifier' for inline modifier definitions."
                         }
-                    },
-                    "required": ["type", "name"]
+                    }
                 }
             ],
-            "description": "Inline modifier definition with type and name"
+            "unevaluatedProperties": false
         }
-    ]
+    }
 }

@@ -2,32 +2,83 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://designtokens.org/schema/2025.10/resolver/modifier",
     "title": "Modifier",
-    "description": "A modifier allows for conditional inclusion of tokens via the contexts map. Similar to a set, but with multiple contexts representing different variations (e.g., light/dark themes, small/medium/large sizes).",
+    "description": "A modifier is similar to a set, but allows for conditional inclusion via the contexts map. A modifier MUST declare a contexts map of string values to arrays of token sources.",
     "type": "object",
+    "required": ["contexts"],
     "properties": {
         "description": {
+            "title": "Description",
             "type": "string",
-            "description": "A human-readable description of the modifier"
+            "description": "A human-readable description of the purpose of the modifier."
         },
         "contexts": {
+            "title": "Contexts",
             "type": "object",
+            "description": "A map of context names to arrays of token sources. Each context represents a possible variant (e.g., 'light' vs 'dark' for theme, 'small' vs 'large' for size).",
+            "minProperties": 2,
             "patternProperties": {
-                "^.*$": {
-                    "$ref": "https://designtokens.org/schema/2025.10/resolver/context"
+                "^.+$": {
+                    "$ref": "#/$defs/tokenSourcesForModifiers",
+                    "description": "An array of token sources for this context. Can contain reference objects pointing to JSON files, inline token definitions, or any combination. If the array declares multiple sources, they will be merged in array order, meaning if a token is declared multiple times, the last occurrence in the array will be the final value."
                 }
             },
-            "minProperties": 1,
-            "description": "Map of context names to token sources. Each key represents a possible context value, and the value is an array of token sources to apply when that context is selected."
+            "additionalProperties": false
         },
         "default": {
+            "title": "Default Context",
             "type": "string",
-            "description": "Default context value. Must match one of the keys in contexts. Used when no input is provided for this modifier."
+            "description": "An optional default value that MUST match one of the keys in contexts. If provided, tools will use this context when no input is provided for this modifier.",
+            "$comment": "JSON Schema cannot validate that this value matches a key in 'contexts'. This validation must be performed at runtime by the implementation."
         },
         "$extensions": {
+            "title": "Extensions",
             "type": "object",
-            "description": "Vendor-specific extensions with keys being vendor-specific namespaces"
+            "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
         }
     },
-    "required": ["contexts"],
-    "additionalProperties": false
+    "additionalProperties": false,
+    "$defs": {
+        "referenceObjectForModifiers": {
+            "title": "Reference Object (For Modifiers)",
+            "type": "object",
+            "required": ["$ref"],
+            "properties": {
+                "$ref": {
+                    "title": "JSON Reference",
+                    "type": "string",
+                    "format": "uri-reference",
+                    "description": "A JSON Pointer (RFC 6901) or URI reference. Modifiers MUST NOT reference other modifiers (#/modifiers/...) or resolutionOrder items (#/resolutionOrder/...).",
+                    "not": {
+                        "anyOf": [
+                            {
+                                "pattern": "^#/modifiers/",
+                                "$comment": "Modifiers cannot reference other modifiers"
+                            },
+                            {
+                                "pattern": "^#/resolutionOrder/",
+                                "$comment": "Nothing can reference resolutionOrder items"
+                            }
+                        ]
+                    }
+                }
+            },
+            "description": "A reference object for use within modifier contexts. Cannot point to other modifiers or resolutionOrder items."
+        },
+        "tokenSourcesForModifiers": {
+            "title": "Token Sources (For Modifiers)",
+            "type": "array",
+            "description": "An array of token sources for modifier contexts - can reference sets but not other modifiers or resolutionOrder items.",
+            "items": {
+                "oneOf": [
+                    {
+                        "$ref": "#/$defs/referenceObjectForModifiers"
+                    },
+                    {
+                        "$ref": "https://designtokens.org/schema/2025.10/format",
+                        "description": "Inline design tokens in DTCG format"
+                    }
+                ]
+            }
+        }
+    }
 }
