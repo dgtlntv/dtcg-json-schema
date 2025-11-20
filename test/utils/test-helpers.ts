@@ -238,7 +238,6 @@ const cachedSchemaContexts: Map<SchemaType, SchemaContext> = new Map()
 
 /**
  * Get or create a cached schema context
- * Reuses the same validator instance across tests for better performance
  */
 export function getSchemaContext(
     schemaType: SchemaType = "format"
@@ -249,13 +248,6 @@ export function getSchemaContext(
         cachedSchemaContexts.set(schemaType, context)
     }
     return cachedSchemaContexts.get(schemaType)!
-}
-
-/**
- * Clear the cached schema contexts (useful for testing)
- */
-export function clearSchemaCache(): void {
-    cachedSchemaContexts.clear()
 }
 
 /**
