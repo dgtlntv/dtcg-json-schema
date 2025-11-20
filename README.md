@@ -3,6 +3,10 @@
 This repository implements the DTCG technical report as a JSON schema that can be used for validating design token json files and design token resolver files.
 The main schema for validating design token files is `schemas/format/format.json` and the main schema for validating design token resolver files is `schemas/resolver/resolver.json`.
 
+You can also use the schemas directly from dgtln.tv:
+- Format Schema: https://dgtln.tv/schemas/2025.10/format/format.json
+- Resolver Schema: https://dgtln.tv/schemas/2025.10/resolver/resolver.json
+
 ## Limitations
 
 -   Type inheritance validation
