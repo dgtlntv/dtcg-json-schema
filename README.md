@@ -4,8 +4,9 @@ This repository implements the DTCG technical report as a JSON schema that can b
 The main schema for validating design token files is `schemas/format/format.json` and the main schema for validating design token resolver files is `schemas/resolver/resolver.json`.
 
 You can also use the schemas directly from dgtln.tv:
-- Format Schema: https://dgtln.tv/schemas/2025.10/format/format.json
-- Resolver Schema: https://dgtln.tv/schemas/2025.10/resolver/resolver.json
+
+-   Format Schema: https://dgtln.tv/schemas/2025.10/format/format.json
+-   Resolver Schema: https://dgtln.tv/schemas/2025.10/resolver/resolver.json
 
 ## Limitations
 
@@ -21,7 +22,7 @@ You can also use the schemas directly from dgtln.tv:
 -   $schema property
     -   Added $schema as an allowed property so this schema can be easily linked
 -   Version string in resolver spec
-    -   Require `2025.10`as the version string in the resolver spec instead of the `2025-11-01`or `2025-10-01` mentioned in the spec because it seems that is what is going to be its proper form. See: https://github.com/design-tokens/community-group/pull/352
+    -   The schema equires `2025.10` as the version string in the resolver spec instead of the `2025-11-01`or `2025-10-01` mentioned in the spec because it seems that is what is going to be its proper form. See: https://github.com/design-tokens/community-group/pull/352
 
 ## Assumptions
 
