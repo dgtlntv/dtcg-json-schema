@@ -1,0 +1,7 @@
+{
+    "$description": "INVALID: Empty reference",
+    "invalid-reference": {
+        "$type": "color",
+        "$value": "{}"
+    }
+}

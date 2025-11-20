@@ -1,0 +1,13 @@
+{
+    "$description": "INVALID: Border missing required 'color' property",
+    "invalid-border": {
+        "$type": "border",
+        "$value": {
+            "width": {
+                "value": 1,
+                "unit": "px"
+            },
+            "style": "solid"
+        }
+    }
+}

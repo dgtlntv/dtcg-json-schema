@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/cubicBezier",
-    "title": "Cubic Bézier Value",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/cubicBezier.json",
+    "title": "Cubic Bezier Value",
     "description": "Value schema for cubicBezier type tokens. Represents how the value of an animated property progresses towards completion over the duration of an animation, effectively creating visual effects such as acceleration, deceleration, and bounce.",
     "type": "array",
     "prefixItems": [
@@ -35,7 +35,7 @@
                     "maximum": 1
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -47,7 +47,7 @@
                     "type": "number"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         }

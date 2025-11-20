@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/resolver",
+    "$id": "https://dgtln.tv/schemas/2025.10/resolver/resolver.json",
     "title": "DTCG Resolver Schema",
     "description": "JSON Schema for the Design Tokens Community Group (DTCG) Resolver specification",
     "type": "object",
@@ -14,8 +14,8 @@
         "version": {
             "title": "Version",
             "type": "string",
-            "const": "2025-10-01",
-            "description": "Version of the resolver specification. Must be '2025-10-01'."
+            "const": "2025.10",
+            "description": "Version of the resolver specification. Must be '2025.10'."
         },
         "description": {
             "title": "Description",
@@ -28,7 +28,12 @@
             "description": "Definition of sets. A set is a collection of design tokens in DTCG format.",
             "patternProperties": {
                 "^.+$": {
-                    "$ref": "https://designtokens.org/schema/2025.10/resolver/set"
+                    "allOf": [
+                        {
+                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
+                        }
+                    ],
+                    "unevaluatedProperties": false
                 }
             },
             "additionalProperties": false
@@ -39,14 +44,19 @@
             "description": "Definition of modifiers. A modifier allows for conditional inclusion of token values via contexts.",
             "patternProperties": {
                 "^.+$": {
-                    "$ref": "https://designtokens.org/schema/2025.10/resolver/modifier"
+                    "allOf": [
+                        {
+                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
+                        }
+                    ],
+                    "unevaluatedProperties": false
                 }
             },
             "additionalProperties": false
         },
         "resolutionOrder": {
             "title": "Resolution Order",
-            "$ref": "https://designtokens.org/schema/2025.10/resolver/resolutionOrder"
+            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/resolutionOrder.json"
         },
         "$defs": {
             "title": "Definitions",

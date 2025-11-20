@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/resolver/set",
+    "$id": "https://dgtln.tv/schemas/2025.10/resolver/set.json",
     "title": "Set",
     "description": "A set is a collection of design tokens in DTCG format. A set MUST contain a sources array with tokens declared directly, or a reference object pointing to a JSON file containing design tokens, or any combination of the two.",
     "type": "object",
@@ -22,7 +22,6 @@
             "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
         }
     },
-    "additionalProperties": false,
     "$defs": {
         "referenceObjectForSets": {
             "title": "Reference Object (For Sets)",
@@ -60,7 +59,7 @@
                         "$ref": "#/$defs/referenceObjectForSets"
                     },
                     {
-                        "$ref": "https://designtokens.org/schema/2025.10/format",
+                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json",
                         "description": "Inline design tokens in DTCG format"
                     }
                 ]

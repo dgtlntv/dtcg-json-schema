@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/color",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/color.json",
     "title": "Color Value",
     "description": "Value schema for color type tokens. Represents a color in a specific color space.",
     "type": "object",
@@ -28,7 +28,7 @@
                     ]
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                 }
             ]
         },
@@ -47,7 +47,7 @@
                     "maximum": 1
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -60,7 +60,7 @@
                     "pattern": "^#[0-9a-fA-F]{6}$"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                 }
             ]
         }
@@ -82,7 +82,7 @@
                     "const": "none"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -100,7 +100,7 @@
                     "const": "none"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -118,7 +118,7 @@
                     "const": "none"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -135,7 +135,7 @@
                     "const": "none"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -151,7 +151,7 @@
                     "const": "none"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },

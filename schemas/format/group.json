@@ -1,12 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/group",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/group.json",
     "title": "Group",
     "description": "A group in the DTCG specification",
     "type": "object",
     "properties": {
         "$type": {
-            "$ref": "https://designtokens.org/schema/2025.10/format/tokenType",
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/tokenType.json",
             "description": "The type for tokens in this group (inherited by nested tokens unless overridden)"
         },
         "$description": {
@@ -18,12 +18,12 @@
             "description": "Vendor-specific extensions"
         },
         "$extends": {
-            "oneOf": [
+            "anyOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/curlyBraceReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/curlyBraceReference"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReference"
                 }
             ],
             "description": "Reference to another group to inherit tokens and properties from"
@@ -41,13 +41,13 @@
         },
         "$root": {
             "description": "Root token for this group. The $root token provides a base value for the group while allowing for variants or extensions.",
-            "$ref": "https://designtokens.org/schema/2025.10/format/token"
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/token.json"
         }
     },
     "patternProperties": {
         "^[^${}.][^{}.]*$": {
-            "description": "Nested groups and tokens (see https://designtokens.org/schema/2025.10/format#/$defs/tokenOrGroupName for pattern definition)",
-            "$ref": "https://designtokens.org/schema/2025.10/format/groupOrToken"
+            "description": "Nested groups and tokens (see ./format.json#/$defs/tokenOrGroupName for pattern definition)",
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/groupOrToken.json"
         }
     },
     "additionalProperties": false

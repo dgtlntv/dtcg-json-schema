@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/strokeStyle",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/strokeStyle.json",
     "title": "Stroke Style Value",
     "description": "Value schema for strokeStyle type tokens. Represents the style applied to lines or borders.",
     "oneOf": [
@@ -27,10 +27,10 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                                "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                             },
                             {
-                                "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                                "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                             }
                         ]
                     },
@@ -44,7 +44,7 @@
                             "enum": ["round", "butt", "square"]
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                         }
                     ]
                 }

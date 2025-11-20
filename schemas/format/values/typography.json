@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/typography",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/typography.json",
     "title": "Typography Value",
     "description": "Value schema for typography type tokens. Represents a typographic style.",
     "type": "object",
@@ -9,10 +9,10 @@
             "description": "The typography's font",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/fontFamily"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/fontFamily.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -20,10 +20,10 @@
             "description": "The size of the typography",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -31,10 +31,10 @@
             "description": "The weight of the typography",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/fontWeight"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/fontWeight.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -42,10 +42,10 @@
             "description": "The horizontal spacing between characters",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -53,14 +53,20 @@
             "description": "The vertical spacing between lines of typography (interpreted as a multiplier of fontSize)",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/number"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/number.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         }
     },
-    "required": ["fontFamily", "fontSize", "fontWeight", "letterSpacing", "lineHeight"],
+    "required": [
+        "fontFamily",
+        "fontSize",
+        "fontWeight",
+        "letterSpacing",
+        "lineHeight"
+    ],
     "additionalProperties": false
 }

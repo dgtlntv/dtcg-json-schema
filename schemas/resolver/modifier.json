@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/resolver/modifier",
+    "$id": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json",
     "title": "Modifier",
     "description": "A modifier is similar to a set, but allows for conditional inclusion via the contexts map. A modifier MUST declare a contexts map of string values to arrays of token sources.",
     "type": "object",
@@ -36,7 +36,6 @@
             "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
         }
     },
-    "additionalProperties": false,
     "$defs": {
         "referenceObjectForModifiers": {
             "title": "Reference Object (For Modifiers)",
@@ -74,7 +73,7 @@
                         "$ref": "#/$defs/referenceObjectForModifiers"
                     },
                     {
-                        "$ref": "https://designtokens.org/schema/2025.10/format",
+                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json",
                         "description": "Inline design tokens in DTCG format"
                     }
                 ]

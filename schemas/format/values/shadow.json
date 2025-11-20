@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/shadow",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/shadow.json",
     "title": "Shadow Value",
     "description": "Value schema for shadow type tokens. Represents a shadow style.",
     "oneOf": [
@@ -16,7 +16,7 @@
                         "$ref": "#/$defs/shadowObject"
                     },
                     {
-                        "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                     }
                 ]
             },
@@ -32,10 +32,10 @@
                     "description": "The color of the shadow",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/color"
+                            "$ref": "./color.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -43,10 +43,10 @@
                     "description": "The horizontal offset that shadow has from the element it is applied to",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                            "$ref": "./dimension.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -54,10 +54,10 @@
                     "description": "The vertical offset that shadow has from the element it is applied to",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                            "$ref": "./dimension.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -65,10 +65,10 @@
                     "description": "The blur radius that is applied to the shadow",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -76,10 +76,10 @@
                     "description": "The amount by which to expand or contract the shadow",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -90,7 +90,7 @@
                             "type": "boolean"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                         }
                     ]
                 }

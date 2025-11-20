@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/border",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/border.json",
     "title": "Border Value",
     "description": "Value schema for border type tokens. Represents a border style.",
     "type": "object",
@@ -9,10 +9,10 @@
             "description": "The color of the border",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/color"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/color.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -20,10 +20,10 @@
             "description": "The width or thickness of the border",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/dimension"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -31,10 +31,10 @@
             "description": "The border's style",
             "oneOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format/values/strokeStyle"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/values/strokeStyle.json"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         }

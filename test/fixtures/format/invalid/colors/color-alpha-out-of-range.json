@@ -1,0 +1,11 @@
+{
+    "$description": "INVALID: Alpha must be [0-1], value 1.5 exceeds range",
+    "invalid-color": {
+        "$type": "color",
+        "$value": {
+            "colorSpace": "srgb",
+            "components": [1, 0, 0],
+            "alpha": 1.5
+        }
+    }
+}

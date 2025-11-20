@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/dimension",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json",
     "title": "Dimension Value",
     "description": "Value schema for dimension type tokens. Represents an amount of distance in a single dimension in the UI, such as a position, width, height, radius, or thickness.",
     "type": "object",
@@ -12,7 +12,7 @@
                     "type": "number"
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                 }
             ]
         },
@@ -24,7 +24,7 @@
                     "enum": ["px", "rem"]
                 },
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                 }
             ]
         }

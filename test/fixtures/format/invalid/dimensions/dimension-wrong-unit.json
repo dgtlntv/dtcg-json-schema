@@ -1,0 +1,10 @@
+{
+    "$description": "INVALID: Only 'px' and 'rem' are valid units, 'em' is not supported",
+    "invalid-dimension": {
+        "$type": "dimension",
+        "$value": {
+            "value": 16,
+            "unit": "em"
+        }
+    }
+}

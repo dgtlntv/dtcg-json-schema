@@ -1,14 +1,14 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/groupOrToken",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/groupOrToken.json",
     "title": "Group or Token",
     "description": "A group or a token in the DTCG specification. A token is identified by the presence of a $value property, while a group is any object without a $value property.",
     "oneOf": [
         {
-            "$ref": "https://designtokens.org/schema/2025.10/format/token"
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/group.json"
         },
         {
-            "$ref": "https://designtokens.org/schema/2025.10/format/group"
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/token.json"
         }
     ]
 }

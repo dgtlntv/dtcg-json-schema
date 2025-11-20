@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/gradient",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/gradient.json",
     "title": "Gradient Value",
     "description": "Value schema for gradient type tokens. Represents a color gradient.",
     "type": "array",
@@ -10,7 +10,7 @@
                 "$ref": "#/$defs/gradientStop"
             },
             {
-                "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
             }
         ]
     },
@@ -24,10 +24,10 @@
                     "description": "The color value at the stop's position on the gradient",
                     "oneOf": [
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format/values/color"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/values/color.json"
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                         }
                     ]
                 },
@@ -40,7 +40,7 @@
                             "maximum": 1
                         },
                         {
-                            "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
                         }
                     ]
                 }

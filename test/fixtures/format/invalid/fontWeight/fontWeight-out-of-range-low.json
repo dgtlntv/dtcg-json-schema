@@ -1,0 +1,7 @@
+{
+    "$description": "INVALID: Font weight must be [1-1000], value 0 is below range",
+    "invalid-fontWeight": {
+        "$type": "fontWeight",
+        "$value": 0
+    }
+}

@@ -1,28 +1,24 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/format.json",
     "title": "DTCG Format Schema",
-    "description": "JSON Schema for the Design Tokens Community Group (DTCG) Format specification",
-    "type": "object",
-    "properties": {
-        "$schema": {
-            "type": "string",
-            "format": "uri",
-            "description": "URI reference to this JSON schema.",
-            "$comment": "$schema is not part of the official DTCG specification."
+    "description": "JSON Schema for the Design Tokens Community Group (DTCG) Format specification. The root of a design tokens file is a group.",
+    "allOf": [
+        {
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/group.json"
         },
-        "$root": {
-            "description": "Root token at the document level. The $root token provides a base value while allowing for variants or extensions.",
-            "$ref": "https://designtokens.org/schema/2025.10/format/token"
+        {
+            "type": "object",
+            "properties": {
+                "$schema": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URI reference to this JSON schema.",
+                    "$comment": "$schema is not part of the official DTCG specification."
+                }
+            }
         }
-    },
-    "patternProperties": {
-        "^[^${}.][^{}.]*$": {
-            "description": "Token groups and tokens (see $defs/tokenOrGroupName for pattern definition)",
-            "$ref": "https://designtokens.org/schema/2025.10/format/groupOrToken"
-        }
-    },
-    "additionalProperties": false,
+    ],
     "$defs": {
         "tokenOrGroupName": {
             "title": "Token or Group Name",
@@ -39,7 +35,7 @@
         "jsonPointerReference": {
             "title": "JSON Pointer Reference",
             "type": "string",
-            "format": "json-pointer",
+            "format": "json-pointer-uri-fragment",
             "description": "JSON Pointer reference (RFC 6901) to a location in the document (e.g., '#/path/to/target')"
         },
         "jsonPointerReferenceObject": {
@@ -56,7 +52,7 @@
         },
         "tokenValueReference": {
             "title": "Token Value Reference",
-            "oneOf": [
+            "anyOf": [
                 {
                     "$ref": "#/$defs/curlyBraceReference"
                 },

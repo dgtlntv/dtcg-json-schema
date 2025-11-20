@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy Schema to BunnyCDN
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to BunnyCDN
+        uses: ayeressian/bunnycdn-storage-deploy@v2.2.5
+        with:
+          source: "schemas"
+          destination: "/schemas/2025.10/"
+          storageZoneName: ${{ secrets.STORAGE_NAME }}
+          storagePassword: ${{ secrets.STORAGE_PASSWORD }}
+          accessKey: ${{ secrets.STORAGE_KEY }}
+          pullZoneId: ${{ secrets.ZONE_ID }}
+          upload: "true"
+          remove: "true"
+          purgePullZone: "true"

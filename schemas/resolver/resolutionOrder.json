@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/resolver/resolutionOrder",
+    "$id": "https://dgtln.tv/schemas/2025.10/resolver/resolutionOrder.json",
     "title": "Resolution Order",
     "description": "An ordered array of sets and modifiers that determines the final resolution of tokens. Order is significant - tokens later in the array override earlier ones in case of conflict.",
     "type": "array",
@@ -45,7 +45,7 @@
             "description": "A set defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
             "allOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/resolver/set"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
                 },
                 {
                     "type": "object",
@@ -73,7 +73,7 @@
             "description": "A modifier defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
             "allOf": [
                 {
-                    "$ref": "https://designtokens.org/schema/2025.10/resolver/modifier"
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
                 },
                 {
                     "type": "object",

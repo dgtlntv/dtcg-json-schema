@@ -1,12 +1,15 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://designtokens.org/schema/2025.10/format/values/fontFamily",
+    "$id": "https://dgtln.tv/schemas/2025.10/format/values/fontFamily.json",
     "title": "Font Family Value",
     "description": "Value schema for fontFamily type tokens. Represents a font name or an array of font names (ordered from most to least preferred).",
     "oneOf": [
         {
             "type": "string",
-            "description": "A single font name"
+            "description": "A single font name",
+            "not": {
+                "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/curlyBraceReference"
+            }
         },
         {
             "type": "array",
@@ -14,10 +17,13 @@
             "items": {
                 "oneOf": [
                     {
-                        "type": "string"
+                        "type": "string",
+                        "not": {
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/curlyBraceReference"
+                        }
                     },
                     {
-                        "$ref": "https://designtokens.org/schema/2025.10/format#/$defs/jsonPointerReferenceObject"
+                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
                     }
                 ]
             },

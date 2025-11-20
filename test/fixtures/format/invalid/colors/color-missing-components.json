@@ -1,0 +1,9 @@
+{
+    "$description": "INVALID: Color value missing required components array",
+    "invalid-color": {
+        "$type": "color",
+        "$value": {
+            "colorSpace": "srgb"
+        }
+    }
+}

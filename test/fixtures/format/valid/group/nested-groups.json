@@ -1,0 +1,18 @@
+{
+    "$description": "Deeply nested groups with type inheritance",
+    "colors": {
+        "$type": "color",
+        "nested": {
+            "deep": {
+                "veryDeep": {
+                    "primary": {
+                        "$value": {
+                            "colorSpace": "srgb",
+                            "components": [0, 0.5, 1]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
