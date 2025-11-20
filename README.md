@@ -22,7 +22,7 @@ You can also use the schemas directly from dgtln.tv:
 -   $schema property
     -   Added $schema as an allowed property so this schema can be easily linked
 -   Version string in resolver spec
-    -   The schema equires `2025.10` as the version string in the resolver spec instead of the `2025-11-01`or `2025-10-01` mentioned in the spec because it seems that is what is going to be its proper form. See: https://github.com/design-tokens/community-group/pull/352
+    -   The schema requires `2025.10` as the version string in the resolver spec instead of the `2025-11-01`or `2025-10-01` mentioned in the spec because it seems that is what is going to be its proper form. See: https://github.com/design-tokens/community-group/pull/352
 
 ## Assumptions
 
