@@ -1,5 +1,5 @@
 {
-    "$description": "Minimal resolver configuration",
+    "description": "Minimal resolver configuration",
     "version": "2025.10",
     "resolutionOrder": [
         {

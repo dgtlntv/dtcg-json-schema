@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Set with additional properties",
+    "description": "INVALID: Set with additional properties",
     "version": "2025.10",
     "sets": {
         "base": {

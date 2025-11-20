@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Modifier with empty contexts",
+    "description": "INVALID: Modifier with empty contexts",
     "version": "2025.10",
     "modifiers": {
         "theme": {

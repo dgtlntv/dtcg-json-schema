@@ -1,5 +1,5 @@
 {
-    "$description": "Resolver with inline set",
+    "description": "Resolver with inline set",
     "version": "2025.10",
     "resolutionOrder": [
         {

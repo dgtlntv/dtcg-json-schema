@@ -1,5 +1,5 @@
 {
-    "$description": "Resolver with modifier referencing a set",
+    "description": "Resolver with modifier referencing a set",
     "version": "2025.10",
     "sets": {
         "baseSize": {

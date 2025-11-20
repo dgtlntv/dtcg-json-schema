@@ -1,5 +1,5 @@
 {
-    "$description": "Resolver with modifiers",
+    "description": "Resolver with modifiers",
     "version": "2025.10",
     "sets": {
         "foundation": {

@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Modifier referencing another modifier",
+    "description": "INVALID: Modifier referencing another modifier",
     "version": "2025.10",
     "sets": {
         "colors": {

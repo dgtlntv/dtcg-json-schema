@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Duplicate names in resolution order",
+    "description": "INVALID: Duplicate names in resolution order",
     "version": "2025.10",
     "resolutionOrder": [
         {

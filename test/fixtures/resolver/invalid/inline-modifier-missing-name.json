@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Inline modifier missing name",
+    "description": "INVALID: Inline modifier missing name",
     "version": "2025.10",
     "resolutionOrder": [
         {

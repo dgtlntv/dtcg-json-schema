@@ -6,7 +6,7 @@
     "private": true,
     "scripts": {
         "build": "tsc",
-        "test": "tsx --test \"test/**/*.test.ts\"",
+        "test": "tsx --test test/*.test.ts test/utils/*.test.ts",
         "test:preprocessors": "tsx --test test/utils/preprocessors.test.ts",
         "test:format-validation": "tsx --test test/format-validation.test.ts",
         "test:resolver-validation": "tsx --test test/resolver-validation.test.ts",

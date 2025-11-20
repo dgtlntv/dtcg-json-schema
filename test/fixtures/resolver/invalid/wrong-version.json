@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Wrong version",
+    "description": "INVALID: Wrong version",
     "version": "2024.01",
     "resolutionOrder": [
         {

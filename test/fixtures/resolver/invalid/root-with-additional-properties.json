@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Root with additional properties",
+    "description": "INVALID: Root with additional properties",
     "version": "2025.10",
     "sets": {
         "colors": {

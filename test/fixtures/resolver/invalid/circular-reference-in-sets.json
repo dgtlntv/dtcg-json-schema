@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Circular reference in sets",
+    "description": "INVALID: Circular reference in sets",
     "version": "2025.10",
     "sets": {
         "a": {

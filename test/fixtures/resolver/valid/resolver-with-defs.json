@@ -1,5 +1,5 @@
 {
-    "$description": "Resolver with $defs",
+    "description": "Resolver with $defs",
     "version": "2025.10",
     "sets": {
         "colors": {

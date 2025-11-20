@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Inline set missing name",
+    "description": "INVALID: Inline set missing name",
     "version": "2025.10",
     "resolutionOrder": [
         {

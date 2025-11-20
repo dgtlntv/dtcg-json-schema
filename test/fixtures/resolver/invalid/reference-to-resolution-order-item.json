@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Reference to resolution order item",
+    "description": "INVALID: Reference to resolution order item",
     "version": "2025.10",
     "sets": {
         "colors": {

@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Missing version",
+    "description": "INVALID: Missing version",
     "resolutionOrder": [
         {
             "type": "set",

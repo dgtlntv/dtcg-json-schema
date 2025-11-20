@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Modifier with single context",
+    "description": "INVALID: Modifier with single context",
     "version": "2025.10",
     "modifiers": {
         "theme": {

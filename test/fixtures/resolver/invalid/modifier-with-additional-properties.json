@@ -1,5 +1,5 @@
 {
-    "$description": "INVALID: Modifier with additional properties",
+    "description": "INVALID: Modifier with additional properties",
     "version": "2025.10",
     "modifiers": {
         "theme": {

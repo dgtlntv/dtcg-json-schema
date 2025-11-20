@@ -1,5 +1,5 @@
 {
-    "$description": "Resolver with inline modifier",
+    "description": "Resolver with inline modifier",
     "version": "2025.10",
     "resolutionOrder": [
         {
