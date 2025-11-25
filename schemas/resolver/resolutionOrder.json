@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/resolver/resolutionOrder.json",
     "title": "Resolution Order",
     "description": "An ordered array of sets and modifiers that determines the final resolution of tokens. Order is significant - tokens later in the array override earlier ones in case of conflict.",
@@ -8,20 +8,20 @@
     "items": {
         "oneOf": [
             {
-                "$ref": "#/$defs/referenceObjectForResolutionOrder",
+                "$ref": "#/definitions/referenceObjectForResolutionOrder",
                 "description": "A reference to a set or modifier defined in the sets or modifiers sections"
             },
             {
-                "$ref": "#/$defs/inlineSet",
+                "$ref": "#/definitions/inlineSet",
                 "description": "An inline set definition"
             },
             {
-                "$ref": "#/$defs/inlineModifier",
+                "$ref": "#/definitions/inlineModifier",
                 "description": "An inline modifier definition"
             }
         ]
     },
-    "$defs": {
+    "definitions": {
         "referenceObjectForResolutionOrder": {
             "title": "Reference Object (For Resolution Order)",
             "type": "object",
@@ -66,7 +66,7 @@
                     }
                 }
             ],
-            "unevaluatedProperties": false
+            "additionalProperties": false
         },
         "inlineModifier": {
             "title": "Inline Modifier",
@@ -94,7 +94,7 @@
                     }
                 }
             ],
-            "unevaluatedProperties": false
+            "additionalProperties": false
         }
     }
 }

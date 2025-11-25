@@ -1,11 +1,11 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/format/values/shadow.json",
     "title": "Shadow Value",
     "description": "Value schema for shadow type tokens. Represents a shadow style.",
     "oneOf": [
         {
-            "$ref": "#/$defs/shadowObject"
+            "$ref": "#/definitions/shadowObject"
         },
         {
             "type": "array",
@@ -13,17 +13,17 @@
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "#/$defs/shadowObject"
+                        "$ref": "#/definitions/shadowObject"
                     },
                     {
-                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
+                        "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/definitions/tokenValueReference"
                     }
                 ]
             },
             "minItems": 1
         }
     ],
-    "$defs": {
+    "definitions": {
         "shadowObject": {
             "title": "Shadow Object",
             "type": "object",
@@ -35,7 +35,7 @@
                             "$ref": "./color.json"
                         },
                         {
-                            "$ref": "../format.json#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/definitions/tokenValueReference"
                         }
                     ]
                 },
@@ -46,7 +46,7 @@
                             "$ref": "./dimension.json"
                         },
                         {
-                            "$ref": "../format.json#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/definitions/tokenValueReference"
                         }
                     ]
                 },
@@ -57,7 +57,7 @@
                             "$ref": "./dimension.json"
                         },
                         {
-                            "$ref": "../format.json#/$defs/tokenValueReference"
+                            "$ref": "../format.json#/definitions/tokenValueReference"
                         }
                     ]
                 },
@@ -68,7 +68,7 @@
                             "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                         },
                         {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/definitions/tokenValueReference"
                         }
                     ]
                 },
@@ -79,7 +79,7 @@
                             "$ref": "https://dgtln.tv/schemas/2025.10/format/values/dimension.json"
                         },
                         {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/tokenValueReference"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/definitions/tokenValueReference"
                         }
                     ]
                 },
@@ -90,7 +90,7 @@
                             "type": "boolean"
                         },
                         {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/$defs/jsonPointerReferenceObject"
+                            "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/definitions/jsonPointerReferenceObject"
                         }
                     ]
                 }

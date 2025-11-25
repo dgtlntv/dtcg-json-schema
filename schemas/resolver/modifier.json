@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json",
     "title": "Modifier",
     "description": "A modifier is similar to a set, but allows for conditional inclusion via the contexts map. A modifier MUST declare a contexts map of string values to arrays of token sources.",
@@ -18,7 +18,7 @@
             "minProperties": 2,
             "patternProperties": {
                 "^.+$": {
-                    "$ref": "#/$defs/tokenSourcesForModifiers",
+                    "$ref": "#/definitions/tokenSourcesForModifiers",
                     "description": "An array of token sources for this context. Can contain reference objects pointing to JSON files, inline token definitions, or any combination. If the array declares multiple sources, they will be merged in array order, meaning if a token is declared multiple times, the last occurrence in the array will be the final value."
                 }
             },
@@ -36,7 +36,7 @@
             "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
         }
     },
-    "$defs": {
+    "definitions": {
         "referenceObjectForModifiers": {
             "title": "Reference Object (For Modifiers)",
             "type": "object",
@@ -70,7 +70,7 @@
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "#/$defs/referenceObjectForModifiers"
+                        "$ref": "#/definitions/referenceObjectForModifiers"
                     },
                     {
                         "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json",

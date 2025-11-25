@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/resolver/resolver.json",
     "title": "DTCG Resolver Schema",
     "description": "JSON Schema for the Design Tokens Community Group (DTCG) Resolver specification",
@@ -33,7 +33,7 @@
                             "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
                         }
                     ],
-                    "unevaluatedProperties": false
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -49,7 +49,7 @@
                             "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
                         }
                     ],
-                    "unevaluatedProperties": false
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -58,7 +58,7 @@
             "title": "Resolution Order",
             "$ref": "https://dgtln.tv/schemas/2025.10/resolver/resolutionOrder.json"
         },
-        "$defs": {
+        "definitions": {
             "title": "Definitions",
             "type": "object",
             "description": "Optional definitions that tools MAY support but MUST NOT throw an error when encountered."
