@@ -5,7 +5,7 @@
     "description": "JSON Schema for the Design Tokens Community Group (DTCG) Format specification. The root of a design tokens file is a group.",
     "allOf": [
         {
-            "$ref": "https://dgtln.tv/schemas/2025.10/format/group.json"
+            "$ref": "https://dgtln.tv/schemas/2025.10/format/group.json#/$defs/groupProperties"
         },
         {
             "type": "object",
@@ -19,6 +19,7 @@
             }
         }
     ],
+    "unevaluatedProperties": false,
     "$defs": {
         "tokenOrGroupName": {
             "title": "Token or Group Name",
