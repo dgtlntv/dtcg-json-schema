@@ -24,7 +24,7 @@
             "description": "Vendor-specific extensions"
         },
         "$extends": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/definitions/curlyBraceReference"
                 },
@@ -90,7 +90,7 @@
         },
         "tokenValueReference": {
             "title": "Token Value Reference",
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "#/definitions/curlyBraceReference"
                 },

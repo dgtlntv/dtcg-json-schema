@@ -18,7 +18,7 @@
             "description": "Vendor-specific extensions"
         },
         "$extends": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json#/definitions/curlyBraceReference"
                 },
