@@ -5,6 +5,7 @@
     "description": "A modifier is similar to a set, but allows for conditional inclusion via the contexts map. A modifier MUST declare a contexts map of string values to arrays of token sources.",
     "type": "object",
     "required": ["contexts"],
+    "additionalProperties": false,
     "properties": {
         "description": {
             "title": "Description",

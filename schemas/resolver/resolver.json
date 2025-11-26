@@ -28,12 +28,7 @@
             "description": "Definition of sets. A set is a collection of design tokens in DTCG format.",
             "patternProperties": {
                 "^.+$": {
-                    "allOf": [
-                        {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
-                        }
-                    ],
-                    "additionalProperties": false
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
                 }
             },
             "additionalProperties": false
@@ -44,12 +39,7 @@
             "description": "Definition of modifiers. A modifier allows for conditional inclusion of token values via contexts.",
             "patternProperties": {
                 "^.+$": {
-                    "allOf": [
-                        {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
-                        }
-                    ],
-                    "additionalProperties": false
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
                 }
             },
             "additionalProperties": false
@@ -58,7 +48,7 @@
             "title": "Resolution Order",
             "$ref": "https://dgtln.tv/schemas/2025.10/resolver/resolutionOrder.json"
         },
-        "definitions": {
+        "$defs": {
             "title": "Definitions",
             "type": "object",
             "description": "Optional definitions that tools MAY support but MUST NOT throw an error when encountered."

@@ -43,57 +43,87 @@
         "inlineSet": {
             "title": "Inline Set",
             "description": "A set defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
-            "allOf": [
-                {
-                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
+            "type": "object",
+            "required": ["sources", "name", "type"],
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "description": "A human-readable description of the purpose of the set."
                 },
-                {
+                "sources": {
+                    "title": "Sources",
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json#/definitions/tokenSourcesForSets",
+                    "description": "An array of token sources. Can contain reference objects pointing to JSON files, inline token definitions, or any combination. If the array declares multiple sources, they will be merged in array order, meaning if a token is declared multiple times, the last occurrence in the array will be the final value."
+                },
+                "$extensions": {
+                    "title": "Extensions",
                     "type": "object",
-                    "required": ["name", "type"],
-                    "properties": {
-                        "name": {
-                            "title": "Name",
-                            "type": "string",
-                            "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
-                            "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
-                        },
-                        "type": {
-                            "title": "Type",
-                            "type": "string",
-                            "const": "set",
-                            "description": "MUST be 'set' for inline set definitions."
-                        }
-                    }
+                    "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
+                    "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "const": "set",
+                    "description": "MUST be 'set' for inline set definitions."
                 }
-            ],
+            },
             "additionalProperties": false
         },
         "inlineModifier": {
             "title": "Inline Modifier",
             "description": "A modifier defined inline in the resolutionOrder array. Must include 'name' and 'type' properties.",
-            "allOf": [
-                {
-                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
+            "type": "object",
+            "required": ["contexts", "name", "type"],
+            "properties": {
+                "description": {
+                    "title": "Description",
+                    "type": "string",
+                    "description": "A human-readable description of the purpose of the modifier."
                 },
-                {
+                "contexts": {
+                    "title": "Contexts",
                     "type": "object",
-                    "required": ["name", "type"],
-                    "properties": {
-                        "name": {
-                            "title": "Name",
-                            "type": "string",
-                            "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
-                            "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
-                        },
-                        "type": {
-                            "title": "Type",
-                            "type": "string",
-                            "const": "modifier",
-                            "description": "MUST be 'modifier' for inline modifier definitions."
+                    "description": "A map of context names to arrays of token sources. Each context represents a possible variant (e.g., 'light' vs 'dark' for theme, 'small' vs 'large' for size).",
+                    "minProperties": 2,
+                    "patternProperties": {
+                        "^.+$": {
+                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json#/definitions/tokenSourcesForModifiers",
+                            "description": "An array of token sources for this context. Can contain reference objects pointing to JSON files, inline token definitions, or any combination. If the array declares multiple sources, they will be merged in array order, meaning if a token is declared multiple times, the last occurrence in the array will be the final value."
                         }
-                    }
+                    },
+                    "additionalProperties": false
+                },
+                "default": {
+                    "title": "Default Context",
+                    "type": "string",
+                    "description": "An optional default value that MUST match one of the keys in contexts. If provided, tools will use this context when no input is provided for this modifier.",
+                    "$comment": "JSON Schema cannot validate that this value matches a key in 'contexts'. This validation must be performed at runtime by the implementation."
+                },
+                "$extensions": {
+                    "title": "Extensions",
+                    "type": "object",
+                    "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
+                },
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "description": "A unique name that MUST NOT conflict with any other name in resolutionOrder.",
+                    "$comment": "Uniqueness must be validated at runtime as JSON Schema cannot validate uniqueness across array items."
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "const": "modifier",
+                    "description": "MUST be 'modifier' for inline modifier definitions."
                 }
-            ],
+            },
             "additionalProperties": false
         }
     }

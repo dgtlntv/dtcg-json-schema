@@ -5,6 +5,7 @@
     "description": "A set is a collection of design tokens in DTCG format. A set MUST contain a sources array with tokens declared directly, or a reference object pointing to a JSON file containing design tokens, or any combination of the two.",
     "type": "object",
     "required": ["sources"],
+    "additionalProperties": false,
     "properties": {
         "description": {
             "title": "Description",
