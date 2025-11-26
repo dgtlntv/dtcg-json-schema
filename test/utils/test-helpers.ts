@@ -3,7 +3,7 @@
  */
 
 import addFormats from "ajv-formats"
-import Ajv2020 from "ajv/dist/2020"
+import Ajv from "ajv"
 import { readFileSync, readdirSync, statSync } from "node:fs"
 import { join } from "node:path"
 import { resolveReferences } from "./preprocessors/referenceResolver"
@@ -67,7 +67,7 @@ export interface PreprocessorOptions {
 }
 
 export interface SchemaContext {
-    ajv: Ajv2020
+    ajv: Ajv
     formatSchema: object
     resolverSchema?: object
 }
@@ -145,7 +145,7 @@ function loadSchemaFile(relativePath: string): object {
 /**
  * Load all value schemas from the values directory
  */
-function loadValueSchemas(ajv: Ajv2020): void {
+function loadValueSchemas(ajv: Ajv): void {
     const valuesDir = join(SCHEMA_DIR, "format", "values")
     const schemaFiles = readdirSync(valuesDir).filter((file) =>
         file.endsWith(".json")
@@ -160,8 +160,8 @@ function loadValueSchemas(ajv: Ajv2020): void {
 /**
  * Create an AJV instance configured for DTCG schema validation
  */
-export function createValidator(): Ajv2020 {
-    const ajv = new Ajv2020(AJV_CONFIG)
+export function createValidator(): Ajv {
+    const ajv = new Ajv(AJV_CONFIG)
     addFormats(ajv)
     return ajv
 }
@@ -170,7 +170,7 @@ export function createValidator(): Ajv2020 {
  * Load all referenced schemas into the validator
  */
 export function loadSchemas(
-    ajv: Ajv2020,
+    ajv: Ajv,
     schemaType: SchemaType = "format"
 ): SchemaContext {
     if (schemaType === "format") {
@@ -266,7 +266,7 @@ function formatValidationErrors(errors: Array<any>): string[] {
  */
 export function validateAgainstSchema(
     data: DesignTokenObject,
-    ajv: Ajv2020,
+    ajv: Ajv,
     schema: object
 ): ValidationResult {
     const validate = ajv.compile(schema)

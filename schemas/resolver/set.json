@@ -1,10 +1,11 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/resolver/set.json",
     "title": "Set",
     "description": "A set is a collection of design tokens in DTCG format. A set MUST contain a sources array with tokens declared directly, or a reference object pointing to a JSON file containing design tokens, or any combination of the two.",
     "type": "object",
     "required": ["sources"],
+    "additionalProperties": false,
     "properties": {
         "description": {
             "title": "Description",
@@ -13,7 +14,7 @@
         },
         "sources": {
             "title": "Sources",
-            "$ref": "#/$defs/tokenSourcesForSets",
+            "$ref": "#/definitions/tokenSourcesForSets",
             "description": "An array of token sources. Can contain reference objects pointing to JSON files, inline token definitions, or any combination. If the array declares multiple sources, they will be merged in array order, meaning if a token is declared multiple times, the last occurrence in the array will be the final value."
         },
         "$extensions": {
@@ -22,7 +23,7 @@
             "description": "Vendor-specific extensions. Keys are vendor-specific namespaces."
         }
     },
-    "$defs": {
+    "definitions": {
         "referenceObjectForSets": {
             "title": "Reference Object (For Sets)",
             "type": "object",
@@ -56,7 +57,7 @@
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "#/$defs/referenceObjectForSets"
+                        "$ref": "#/definitions/referenceObjectForSets"
                     },
                     {
                         "$ref": "https://dgtln.tv/schemas/2025.10/format/format.json",
