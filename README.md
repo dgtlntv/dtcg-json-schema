@@ -17,8 +17,6 @@ You can also use the schemas directly from dgtln.tv:
 
 ## Deviations from spec
 
--   Color component count
-    -   The schema requires exactly 3 components for all color values, though the specification states "the number of components depends on the color space."
 -   $schema property
     -   Added $schema as an allowed property so this schema can be easily linked
 -   Version string in resolver spec
