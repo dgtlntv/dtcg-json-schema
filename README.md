@@ -1,3 +1,5 @@
+The schema landet in the official repository. Use that one! https://github.com/design-tokens/community-group/tree/main/www/public/schemas/2025.10
+
 # DTCG JSON schema
 
 This repository implements the DTCG technical report as a JSON schema that can be used for validating design token json files and design token resolver files.
