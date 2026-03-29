@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://dgtln.tv/schemas/2025.10/resolver/resolver.json",
     "title": "DTCG Resolver Schema",
     "description": "JSON Schema for the Design Tokens Community Group (DTCG) Resolver specification",
@@ -28,15 +28,9 @@
             "description": "Definition of sets. A set is a collection of design tokens in DTCG format.",
             "patternProperties": {
                 "^.+$": {
-                    "allOf": [
-                        {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
-                        }
-                    ],
-                    "unevaluatedProperties": false
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/set.json"
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "modifiers": {
             "title": "Modifiers",
@@ -44,15 +38,9 @@
             "description": "Definition of modifiers. A modifier allows for conditional inclusion of token values via contexts.",
             "patternProperties": {
                 "^.+$": {
-                    "allOf": [
-                        {
-                            "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
-                        }
-                    ],
-                    "unevaluatedProperties": false
+                    "$ref": "https://dgtln.tv/schemas/2025.10/resolver/modifier.json"
                 }
-            },
-            "additionalProperties": false
+            }
         },
         "resolutionOrder": {
             "title": "Resolution Order",
